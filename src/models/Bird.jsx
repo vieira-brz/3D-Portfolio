@@ -4,52 +4,52 @@ import { useAnimations, useGLTF } from "@react-three/drei";
 
 import birdScene from "../assets/3d/bird.glb";
 
-// 3D Model from: https://sketchfab.com/3d-models/phoenix-bird-844ba0cf144a413ea92c779f18912042
+// 3D Model: https://sketchfab.com/3d-models/phoenix-bird-844ba0cf144a413ea92c779f18912042
 export function Bird() {
+    // Referência para o objeto do pássaro (para acessar e modificar sua posição e rotação)
     const birdRef = useRef();
 
-    // Load the 3D model and animations from the provided GLTF file
+    // Carrega o modelo 3D e as animações do arquivo GLTF fornecido
     const { scene, animations } = useGLTF(birdScene);
 
-    // Get access to the animations for the bird
+    // Obtém acesso às animações para o pássaro
     const { actions } = useAnimations(animations, birdRef);
 
-    // Play the "Take 001" animation when the component mounts
-    // Note: Animation names can be found on the Sketchfab website where the 3D model is hosted.
+    // Toca a animação "Take 001" quando o componente é montado
+    // Observação: Os nomes das animações podem ser encontrados no site Sketchfab onde o modelo 3D está hospedado.
     useEffect(() => {
         actions["Take 001"].play();
     }, []);
 
     useFrame(({ clock, camera }) => {
-        // Update the Y position to simulate bird-like motion using a sine wave
+        // Atualiza a posição Y para simular o movimento do pássaro usando uma onda senoidal
         birdRef.current.position.y = Math.sin(clock.elapsedTime) * 0.2 + 2;
 
-        // Check if the bird reached a certain endpoint relative to the camera
+        // Verifica se o pássaro atingiu um determinado ponto final em relação à câmera
         if (birdRef.current.position.x > camera.position.x + 10) {
-            // Change direction to backward and rotate the bird 180 degrees on the y-axis
+            // Muda a direção para trás e rotaciona o pássaro 180 graus no eixo Y
             birdRef.current.rotation.y = Math.PI;
         } else if (birdRef.current.position.x < camera.position.x - 10) {
-            // Change direction to forward and reset the bird's rotation
+            // Muda a direção para frente e redefine a rotação do pássaro
             birdRef.current.rotation.y = 0;
         }
 
-        // Update the X and Z positions based on the direction
+        // Atualiza as posições X e Z com base na direção
         if (birdRef.current.rotation.y === 0) {
-            // Moving forward
+            // Movendo para frente
             birdRef.current.position.x += 0.01;
             birdRef.current.position.z -= 0.01;
         } else {
-            // Moving backward
+            // Movendo para trás
             birdRef.current.position.x -= 0.01;
             birdRef.current.position.z += 0.01;
         }
     });
 
     return (
-        // to create and display 3D objects
+        // Para criar e exibir objetos 3D
         <mesh ref={birdRef} position={[-5, 2, 1]} scale={[0.003, 0.003, 0.003]}>
-      // use the primitive element when you want to directly embed a complex 3D
-            model or scene
+            {/* use o elemento primitivo quando quiser incorporar diretamente um 3D complexo modelo ou cena  */}
             <primitive object={scene} />
         </mesh>
     );

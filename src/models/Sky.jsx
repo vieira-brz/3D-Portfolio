@@ -4,17 +4,20 @@ import { useFrame } from "@react-three/fiber";
 
 import skyScene from "../assets/3d/sky.glb";
 
-// 3D Model from: https://sketchfab.com/3d-models/phoenix-bird-844ba0cf144a413ea92c779f18912042
+// 3D Model: https://sketchfab.com/3d-models/phoenix-bird-844ba0cf144a413ea92c779f18912042
 export function Sky({ isRotating }) {
+  // Carregar o modelo 3D do céu
   const sky = useGLTF(skyScene);
+
+  // Referência para o objeto do céu
   const skyRef = useRef();
 
-  // Note: Animation names can be found on the Sketchfab website where the 3D model is hosted.
-  // It ensures smooth animations by making the rotation frame rate-independent.
-  // 'delta' represents the time in seconds since the last frame.
+  // Nota: Os nomes das animações podem ser encontrados no site Sketchfab onde o modelo 3D está hospedado.
+  // Isso garante animações suaves tornando a rotação independente da taxa de quadros.
+  // 'delta' representa o tempo em segundos desde o último quadro.
   useFrame((_, delta) => {
     if (isRotating) {
-      skyRef.current.rotation.y += 0.25 * delta; // Adjust the rotation speed as needed
+      skyRef.current.rotation.y += 0.25 * delta; // Ajuste a velocidade de rotação conforme necessário
     }
   });
 

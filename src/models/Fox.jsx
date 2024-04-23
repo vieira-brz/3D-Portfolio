@@ -1,33 +1,40 @@
-/**
- * IMPORTANT: Loading glTF models into a Three.js scene is a lot of work.
- * Before we can configure or animate our model’s meshes, we need to iterate through
- * each part of our model’s meshes and save them separately.
- *
- * But luckily there is an app that turns gltf or glb files into jsx components
- * For this model, visit https://gltf.pmnd.rs/
- * And get the code. And then add the rest of the things.
- * YOU DON'T HAVE TO WRITE EVERYTHING FROM SCRATCH
- */
+/*
+* IMPORTANTE: Carregar modelos glTF em uma cena Three.js dá muito trabalho.
+* Antes de podermos configurar ou animar as malhas do nosso modelo, precisamos iterar
+* cada parte das malhas do nosso modelo e salve-as separadamente.
+*
+* Mas felizmente existe um aplicativo que transforma arquivos gltf ou glb em componentes jsx
+* Para este modelo, visite https://gltf.pmnd.rs/
+* E obtenha o código. E então adicione o resto das coisas.
+* VOCÊ NÃO PRECISA ESCREVER TUDO DO RISCO
+*/
 
 import React, { useRef, useEffect } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
 
 import scene from "../assets/3d/fox.glb";
 
-// 3D Model from: https://sketchfab.com/3d-models/fox-f372c04de44640fbb6a4f9e4e5845c78
+// 3D Model: https://sketchfab.com/3d-models/fox-f372c04de44640fbb6a4f9e4e5845c78
 export function Fox({ currentAnimation, ...props }) {
+    // Referência para o grupo que contém o modelo 3D e suas animações
     const group = useRef();
+
+    // Carrega os nós, materiais e animações do arquivo GLTF fornecido
     const { nodes, materials, animations } = useGLTF(scene);
+
+    // Obtém acesso às animações do grupo
     const { actions } = useAnimations(animations, group);
 
-    // This effect will run whenever the currentAnimation prop changes
+    // Este efeito será executado sempre que a propriedade currentAnimation mudar
     useEffect(() => {
+        // Para todas as animações, interrompe qualquer ação atualmente em execução
         Object.values(actions).forEach((action) => action.stop());
 
+        // Se houver uma ação com o nome especificado em currentAnimation, a reproduz
         if (actions[currentAnimation]) {
             actions[currentAnimation].play();
         }
-    }, [actions, currentAnimation]);
+    }, [actions, currentAnimation]);  // Este efeito será acionado sempre que actions ou currentAnimation mudarem
 
     return (
         <group ref={group} {...props} dispose={null}>
