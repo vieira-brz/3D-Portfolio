@@ -1,4 +1,4 @@
-import { meta, shopify, starbucks, tesla } from "../assets/images";
+import { shopify, starbucks, tesla } from "../assets/images";
 import {
     car,
     contact,
@@ -11,13 +11,11 @@ import {
     javascript,
     linkedin,
     mongodb,
-    motion,
     mui,
     nextjs,
     nodejs,
     pricewise,
     react,
-    redux,
     sass,
     snapgram,
     summiz,
@@ -63,11 +61,6 @@ export const skills = [
         type: "Database",
     },
     {
-        imageUrl: motion,
-        name: "Motion",
-        type: "Animation",
-    },
-    {
         imageUrl: mui,
         name: "Material-UI",
         type: "Frontend",
@@ -88,11 +81,6 @@ export const skills = [
         type: "Frontend",
     },
     {
-        imageUrl: redux,
-        name: "Redux",
-        type: "State Management",
-    },
-    {
         imageUrl: sass,
         name: "Sass",
         type: "Frontend",
@@ -106,60 +94,46 @@ export const skills = [
         imageUrl: typescript,
         name: "TypeScript",
         type: "Frontend",
-    }
+    },
 ];
 
 export const experiences = [
     {
-        title: "React.js Developer",
-        company_name: "Starbucks",
+        title: "Estagiário em TI",
+        company_name: "Toroid do Brasil",
         icon: starbucks,
         iconBg: "#accbe1",
-        date: "March 2020 - April 2021",
+        date: "Fevereiro 2021 - Fevereiro 2022",
         points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
+            "Inicialmente, fui encarregado de prestar suporte técnico, desenvolver sistemas web e aprimorar sistemas existentes, além de realizar a manutenção de infraestrutura e servidores. ",
+            "Com o tempo, adquiri experiência em administração de servidores Linux, desenvolvimento de aplicações JavaScript complexas e criação de gráficos estatísticos dinâmicos baseados em dados reais.",
+            "Durante minha trajetória como estagiário na Toroid do Brasil, alcancei resultados notáveis, incluindo a melhoria de processos, a otimização do tempo de consultas e a padronização da interface do usuário.",
+            "Minha habilidade de aprendizado rápido e adaptação a novas tecnologias contribuiu para o sucesso dos projetos e para meu crescimento profissional dentro da empresa.",
         ],
     },
     {
-        title: "React Native Developer",
-        company_name: "Tesla",
+        title: "Desenvolvedor Júnior",
+        company_name: "Toroid do Brasil",
         icon: tesla,
         iconBg: "#fbc3bc",
-        date: "Jan 2021 - Feb 2022",
+        date: "Fevereiro 2022 - Abril 2023",
         points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
+            "Durante minha jornada como programador júnior, adquiri valiosas habilidades em Front-End, Back-End, DevOps, Tratamento de Erros e Organização de Código. ",
+            "Expandi meu conhecimento na área de redes e infraestrutura, com experiência em configuração de firewall e negociação com prestadores de serviços para implementação de soluções tecnológicas na empresa.",
+            "Fui encarregado do gerenciamento de um projeto crucial de migração de sistema, liderando o processo de transição de um sistema legado para uma solução mais moderna e eficiente.",
+            "Liderei a migração de um servidor físico para uma infraestrutura em nuvem, demonstrando minha capacidade de planejamento, execução e solução de problemas em ambientes complexos de TI. ",
         ],
     },
     {
-        title: "Web Developer",
-        company_name: "Shopify",
+        title: "Desenvolvedor Pleno",
+        company_name: "Toroid do Brasil",
         icon: shopify,
         iconBg: "#b7e4c7",
-        date: "Jan 2022 - Jan 2023",
+        date: "Abril 2023 - Atualmente",
         points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
-        ],
-    },
-    {
-        title: "Full stack Developer",
-        company_name: "Meta",
-        icon: meta,
-        iconBg: "#a2d2ff",
-        date: "Jan 2023 - Present",
-        points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
+            "Como desenvolvedor pleno, assumi um papel de liderança ao participar da definição de fluxo de processos, monitoramento e reuniões de migração e implantação de novo sistema.",
+            "Destaco minha experiência na migração de uma aplicação JavaScript, HTML e CSS tradicional para uma solução avançada em React, com uso de MongoDB e NodeJS, requisições assíncronas e padronização de entrada e saída de dados. ",
+            "Entusiasmado em ampliar meus conhecimentos e habilidades em IA, machine learning e automatização de processos, busco agregar à empresa um controle mais eficiente, sugestões automatizadas e compreensão de padrões de dados. ",
         ],
     },
 ];
@@ -173,12 +147,12 @@ export const socialLinks = [
     {
         name: 'GitHub',
         iconUrl: github,
-        link: 'https://github.com/YourGitHubUsername',
+        link: 'https://github.com/vieira-brz',
     },
     {
         name: 'LinkedIn',
         iconUrl: linkedin,
-        link: 'https://www.linkedin.com/in/YourLinkedInUsername',
+        link: 'https://www.linkedin.com/in/vinicius-vieira-braz',
     }
 ];
 

@@ -12,18 +12,17 @@ const About = () => {
   return (
     <section className='max-container'>
       <h1 className='head-text'>
-        Hello, Im{" "}
+        Olá, Eu sou {" "}
         <span className='blue-gradient_text font-semibold drop-shadow'>
           {" "}
-          Adrian
+          Vinícius
         </span>{" "}
         👋
       </h1>
 
       <div className='mt-5 flex flex-col gap-3 text-slate-500'>
         <p>
-          Software Engineer based in Croatia, specializing in technical
-          education through hands-on learning and building applications.
+          Desenvolvedor de Software no Brasil, atuando na área de Desenvolvimento Web, DevOps, Infraestrutura e Cloud Servers.
         </p>
       </div>
 
