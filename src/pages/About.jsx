@@ -12,7 +12,7 @@ const About = () => {
   return (
     <section className='max-container'>
       <h1 className='head-text'>
-        Hello, I'm{" "}
+        Hello, Im{" "}
         <span className='blue-gradient_text font-semibold drop-shadow'>
           {" "}
           Adrian
@@ -50,8 +50,8 @@ const About = () => {
         <h3 className='subhead-text'>Work Experience.</h3>
         <div className='mt-5 flex flex-col gap-3 text-slate-500'>
           <p>
-            I've worked with all sorts of companies, leveling up my skills and
-            teaming up with smart people. Here's the rundown:
+            Ive worked with all sorts of companies, leveling up my skills and
+            teaming up with smart people. Heres the rundown:
           </p>
         </div>
 
