@@ -76,7 +76,7 @@ const Contact = () => {
       {alert.show && <Alert {...alert} />}
 
       <div className='flex-1 min-w-[50%] flex flex-col'>
-        <h1 className='head-text'>Get in Touch</h1>
+        <h1 className='head-text'>Entrar em contato</h1>
 
         <form
           ref={formRef}
@@ -84,7 +84,7 @@ const Contact = () => {
           className='w-full flex flex-col gap-7 mt-14'
         >
           <label className='text-black-500 font-semibold'>
-            Name
+            Nome
             <input
               type='text'
               name='name'
@@ -112,12 +112,12 @@ const Contact = () => {
             />
           </label>
           <label className='text-black-500 font-semibold'>
-            Your Message
+            Deixe sua mensagem
             <textarea
               name='message'
               rows='4'
               className='textarea'
-              placeholder='Write your thoughts here...'
+              placeholder='Escreva aqui sua opinião...'
               value={form.message}
               onChange={handleChange}
               onFocus={handleFocus}
@@ -132,7 +132,7 @@ const Contact = () => {
             onFocus={handleFocus}
             onBlur={handleBlur}
           >
-            {loading ? "Sending..." : "Submit"}
+            {loading ? "Enviando..." : "Enviar"}
           </button>
         </form>
       </div>
